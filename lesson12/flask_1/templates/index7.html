@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+    {% set links=[
+            ('Home', url_for('.index')), 
+            ('About', url_for('.about')), 
+            ]
+    %}
+
+    <nav>
+        {% for label, href in links %}
+            {% if not loop.first %} | {% endif %}
+            {% if href is current_link %}
+                <a href="#">{{ label }}</a>
+            {% else %}    
+                <a href="{{ href }}">{{ label }}</a>
+            {% endif %}
+        {% endfor %}
+    </nav>
+    <p>{{ 'hello'|capitalize }}</p>
+    <p>{{ [1, 9, 5, 3, 7]|sort }}</p>
+    <p>{{ -10|abs }}</p>
+{% endblock %}

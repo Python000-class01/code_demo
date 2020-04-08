@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        {% block head %}
+
+            {% include 'includes/_header.html' %}
+
+        {% endblock %}
+    </head>
+    <body>
+        <div>{% block content %} {% endblock %}</div>
+
+    </body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!--从模版导入宏-->
+{% import 'form.html' as form %}
+
+<!--调用宏-->
+<p>用户名 ： {{ form.input('username') }}</p>
+<p>密  码 ：{{ form.input('password', type='password') }}</p>
+<p>{{ form.input('submit', type='submit', value='登录') }}</p>
+
+{% endblock %}

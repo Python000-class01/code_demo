@@ -1,0 +1,26 @@
+<html>
+
+<head></head>
+
+<body>
+    <h1>hello world</h1>
+    {% set links=[
+            ('Home', url_for('.index')), 
+            ('About', url_for('.about')), 
+            ]
+    %}
+
+    <nav>
+        {% for label, href in links %}
+            {% if not loop.first %} | {% endif %}
+            {% if href is current_link %}
+                <a href="#">{{ label }}</a>
+            {% else %}    
+                <a href="{{ href }}">{{ label }}</a>
+            {% endif %}
+        {% endfor %}
+    </nav>
+
+</body>
+
+</html>
